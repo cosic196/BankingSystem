@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  bankingsystem:
+    build:
+      context: .
+      dockerfile: BankingSystem.Api/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://*:8080
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8080:8080"
