@@ -27,9 +27,9 @@ public sealed class CreateAccountCommandHandlerTests : IDisposable
         await _sut.HandleAsync(createAccountCommand);
 
         _accountRepositoryMock
-            .Verify(x => x.InsertAsync(It.Is<Account>(acc => 
-                acc.Id == createAccountCommand.Id && 
-                acc.UserId == createAccountCommand.UserId && 
+            .Verify(x => x.InsertAsync(It.Is<Account>(acc =>
+                acc.Id == createAccountCommand.Id &&
+                acc.UserId == createAccountCommand.UserId &&
                 acc.Balance == createAccountCommand.InitialBalance)),
             Times.Once);
     }

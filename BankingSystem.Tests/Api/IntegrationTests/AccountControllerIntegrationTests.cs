@@ -18,10 +18,10 @@ public class AccountControllerIntegrationTests
     private readonly HttpClient _httpClient;
 
     public AccountControllerIntegrationTests()
-	{
+    {
         var factory = new WebApplicationFactory<Program>();
         _httpClient = factory.CreateClient();
-	}
+    }
 
     [Theory(DisplayName = "A user can have as many accounts as they want.")]
     [InlineData(10)]

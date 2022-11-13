@@ -2,17 +2,17 @@
 
 public class Money
 {
-	public decimal Amount { get; }
+    public decimal Amount { get; }
 
-	public Money(decimal amount)
-	{
-		if (amount < 0)
-		{
-			throw new ArgumentException("Money amount must be positive", nameof(amount));
-		}
+    public Money(decimal amount)
+    {
+        if (amount < 0)
+        {
+            throw new ArgumentException("Money amount must be positive", nameof(amount));
+        }
 
-		Amount = amount;
-	}
+        Amount = amount;
+    }
 
     public override string ToString()
     {

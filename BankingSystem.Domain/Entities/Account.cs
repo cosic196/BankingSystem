@@ -5,48 +5,48 @@ namespace BankingSystem.Domain.Entities;
 
 public class Account
 {
-	private Money _balance = null!;
-	
-	public Account(string id, string userId, Money initialBalance)
-	{
-		Id = id;
-		UserId = userId;
-		Balance = initialBalance;
-	}
+    private Money _balance = null!;
 
-	public string Id { get; }
+    public Account(string id, string userId, Money initialBalance)
+    {
+        Id = id;
+        UserId = userId;
+        Balance = initialBalance;
+    }
 
-	public string UserId { get; }
+    public string Id { get; }
 
-	public Money Balance
-	{
-		get
-		{
-			return _balance;
-		}
-		private set
-		{
-			_balance = value >= Constants.MinimumBalance ? value : throw new InvalidAccountBalanceException();
-		}
-	}
+    public string UserId { get; }
 
-	public void Withdraw(Money amount)
-	{
-		if (amount.Amount > Balance.Amount * Constants.MaxBalanceWithdrawal)
-		{
-			throw new InvalidWithdrawalException();
-		}
+    public Money Balance
+    {
+        get
+        {
+            return _balance;
+        }
+        private set
+        {
+            _balance = value >= Constants.MinimumBalance ? value : throw new InvalidAccountBalanceException();
+        }
+    }
 
-		Balance -= amount;
-	}
+    public void Withdraw(Money amount)
+    {
+        if (amount.Amount > Balance.Amount * Constants.MaxBalanceWithdrawal)
+        {
+            throw new InvalidWithdrawalException();
+        }
 
-	public void Deposit(Money amount)
-	{
-		if (amount > Constants.MaxDeposit)
-		{
-			throw new InvalidDepositException();
-		}
+        Balance -= amount;
+    }
 
-		Balance += amount;
-	}
+    public void Deposit(Money amount)
+    {
+        if (amount > Constants.MaxDeposit)
+        {
+            throw new InvalidDepositException();
+        }
+
+        Balance += amount;
+    }
 }

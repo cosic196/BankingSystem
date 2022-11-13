@@ -6,9 +6,9 @@ namespace BankingSystem.Api.Validation;
 
 public class AccountCreationValidator : AbstractValidator<AccountCreation>
 {
-	public AccountCreationValidator()
-	{
-		RuleFor(model => model.UserId).NotEmpty();
-		RuleFor(model => model.InitialBalance).GreaterThanOrEqualTo(Constants.MinimumBalance);
-	}
+    public AccountCreationValidator()
+    {
+        RuleFor(model => model.UserId).NotEmpty();
+        RuleFor(model => model.InitialBalance).GreaterThanOrEqualTo(Constants.MinimumBalance);
+    }
 }

@@ -9,34 +9,34 @@ namespace BankingSystem.Tests.Api.Validation;
 
 public class AccountCreationValidatorTests
 {
-	private readonly AccountCreationValidator _sut;
+    private readonly AccountCreationValidator _sut;
 
-	public AccountCreationValidatorTests()
-	{
-		_sut = new AccountCreationValidator();
-	}
+    public AccountCreationValidatorTests()
+    {
+        _sut = new AccountCreationValidator();
+    }
 
-	[Fact]
-	public void Should_return_valid_for_valid_AccountCreation()
-	{
-		var validAccountCreation = new AccountCreation
-		{
-			UserId = "someId",
-			InitialBalance = Constants.MinimumBalance,
-		};
+    [Fact]
+    public void Should_return_valid_for_valid_AccountCreation()
+    {
+        var validAccountCreation = new AccountCreation
+        {
+            UserId = "someId",
+            InitialBalance = Constants.MinimumBalance,
+        };
 
-		var result = _sut.TestValidate(validAccountCreation);
+        var result = _sut.TestValidate(validAccountCreation);
 
-		result.ShouldNotHaveAnyValidationErrors();
-	}
+        result.ShouldNotHaveAnyValidationErrors();
+    }
 
-	[Theory]
+    [Theory]
     [InlineData("")]
     [InlineData(" ")]
     [InlineData("  ")]
     [InlineData(null)]
-	public void Should_return_invalid_for_empty_userId(string userId)
-	{
+    public void Should_return_invalid_for_empty_userId(string userId)
+    {
         var validAccountCreation = new AccountCreation
         {
             UserId = userId,

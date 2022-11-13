@@ -2,8 +2,8 @@
 
 public class InvalidAccountBalanceException : Exception
 {
-	public InvalidAccountBalanceException()
-		: base($"Invalid account balance. Account balance must be at least {Constants.MinimumBalance}")
-	{
-	}
+    public InvalidAccountBalanceException()
+        : base($"Invalid account balance. Account balance must be at least {Constants.MinimumBalance}")
+    {
+    }
 }

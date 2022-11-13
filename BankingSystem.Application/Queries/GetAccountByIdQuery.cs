@@ -5,10 +5,10 @@ namespace BankingSystem.Application.Queries;
 
 public class GetAccountByIdQuery : IQuery<Account>
 {
-	public GetAccountByIdQuery(string id)
-	{
-		Id = id;
-	}
+    public GetAccountByIdQuery(string id)
+    {
+        Id = id;
+    }
 
-	public string Id { get; }
+    public string Id { get; }
 }

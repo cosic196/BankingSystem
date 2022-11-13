@@ -4,13 +4,13 @@ namespace BankingSystem.Application.Commands;
 
 public class WithdrawFromAccountCommand : ICommand
 {
-	public WithdrawFromAccountCommand(string id, decimal amount)
-	{
-		Id = id;
-		Amount = amount;
-	}
+    public WithdrawFromAccountCommand(string id, decimal amount)
+    {
+        Id = id;
+        Amount = amount;
+    }
 
-	public string Id { get; }
+    public string Id { get; }
 
-	public decimal Amount { get; }
+    public decimal Amount { get; }
 }
